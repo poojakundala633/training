@@ -1,0 +1,62 @@
+aosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git log --oneline
+90b828a (HEAD -> master) Revert "revert file added"
+21dc7ad revert file added
+5bd37f4 (origin/master, mybranch) Merge branch 'master' of github.com:poojakundala633/training
+785c0c1 mergetool added
+d2656e9 add file1.txt to branch
+57f7c8e (Mergesort-Imp1) add file1.txt
+e10bc47 Merge pull request #2 from poojakundala633/greeting
+c2eaf91 (origin/greeting, greeting) git merging greeting
+8c9fa7f greeting merge added to greeting branch
+0104584 greeting merge added
+e3a0f53 3way added
+2786944 readme file added
+1ebc3ea Merge branch 'master' of github.com:poojakundala633/training
+b3dec94 greeting.txt added
+bdf0222 Merge pull request #1 from poojakundala633/mybranch
+2f422f6 (origin/mybranch) kata3 added
+8bc331b pooja.txt added
+6ec716e kata2 added
+e10e92f file1 added
+ee55413 file1.txt kata2
+bf784b0 kata1 added
+d8cf8e0 test file again added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ ^C
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git reset --soft HEAD~1
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git reset --mixed HEAD~1
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git reset --hard HEAD~1
+HEAD is now at 785c0c1 mergetool added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git log --oneline
+785c0c1 (HEAD -> master) mergetool added
+d2656e9 add file1.txt to branch
+57f7c8e (Mergesort-Imp1) add file1.txt
+c2eaf91 (origin/greeting, greeting) git merging greeting
+8c9fa7f greeting merge added to greeting branch
+0104584 greeting merge added
+e3a0f53 3way added
+2786944 readme file added
+1ebc3ea Merge branch 'master' of github.com:poojakundala633/training
+b3dec94 greeting.txt added
+bdf0222 Merge pull request #1 from poojakundala633/mybranch
+2f422f6 (origin/mybranch) kata3 added
+8bc331b pooja.txt added
+6ec716e kata2 added
+e10e92f file1 added
+ee55413 file1.txt kata2
+bf784b0 kata1 added
+d8cf8e0 test file again added
+a8df755 test file added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$
