@@ -1,0 +1,185 @@
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ touch file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ vi file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ echo 2 > file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff --staged
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git add file1.txt
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff --staged
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..0cfbf08
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1 @@
++2
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ echo 3 > file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   file1.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+diff --git a/file1.txt b/file1.txt
+index 0cfbf08..00750ed 100644
+--- a/file1.txt
++++ b/file1.txt
+@@ -1 +1 @@
+-2
++3
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git diff --staged
+diff --git a/file1.txt b/file1.txt
+new file mode 100644
+index 0000000..0cfbf08
+--- /dev/null
++++ b/file1.txt
+@@ -0,0 +1 @@
++2
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git restore --staged file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git add .
+warning: in the working copy of 'file1.txt', LF will be replaced by CRLF the next time Git touches it
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git commit -m "file1.txt kata2 "
+[master ee55413] file1.txt kata2
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git log
+commit ee554131a0c112ee77509f1dd34764035f1f2bfb (HEAD -> master)
+Author: poojakundala633 <pooja.kundala@zemosolabs.com>
+Date:   Mon Jan 23 18:12:10 2023 +0530
+
+    file1.txt kata2
+
+commit bf784b0f0abc6724efd80d96c3da103ddbf9ad50 (origin/master)
+Author: poojakundala633 <pooja.kundala@zemosolabs.com>
+Date:   Mon Jan 23 18:01:29 2023 +0530
+
+    kata1 added
+
+commit d8cf8e0d3495450002f013044ad78c780430bd4f
+Author: poojakundala633 <pooja.kundala@zemosolabs.com>
+Date:   Mon Jan 23 17:55:12 2023 +0530
+
+    test file again added
+
+commit a8df755047960d65e6a1261114d69250968d6c23
+Author: poojakundala633 <pooja.kundala@zemosolabs.com>
+Date:   Mon Jan 23 17:53:59 2023 +0530
+
+    test file added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git echo 4 > file1.txt
+git: 'echo' is not a git command. See 'git --help'.
+
+The most similar command is
+        fetch
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ echo 4 > file.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ echo 4 > file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ cat file1.txt
+4
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   file1.txt
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git restore file1.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ cat file1.txt
+3
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        file.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git add .
+warning: in the working copy of 'file.txt', LF will be replaced by CRLF the next time Git touches it
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git commit -m "file1 added"
+[master e10e92f] file1 added
+ 1 file changed, 1 insertion(+)
+ create mode 100644 file.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ cat file1.txt
+3
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$
