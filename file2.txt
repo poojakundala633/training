@@ -1,0 +1,89 @@
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git branch
+* master
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git branch mybranch
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git branch
+* master
+  mybranch
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git status
+On branch mybranch
+nothing to commit, working tree clean
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ touch pooja.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git add pooja.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git commit -m "pooja.txt added"
+[mybranch 8bc331b] pooja.txt added
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 pooja.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git log --oneline --graph
+* 8bc331b (HEAD -> mybranch) pooja.txt added
+* 6ec716e (origin/master, master) kata2 added
+* e10e92f file1 added
+* ee55413 file1.txt kata2
+* bf784b0 kata1 added
+* d8cf8e0 test file again added
+* a8df755 test file added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git switch master
+Switched to branch 'master'
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git log --oneline --graph
+* 6ec716e (HEAD -> master, origin/master) kata2 added
+* e10e92f file1 added
+* ee55413 file1.txt kata2
+* bf784b0 kata1 added
+* d8cf8e0 test file again added
+* a8df755 test file added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ touch file2.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git log --oneline --graph --all
+* 8bc331b (mybranch) pooja.txt added
+* 6ec716e (HEAD -> master, origin/master) kata2 added
+* e10e92f file1 added
+* ee55413 file1.txt kata2
+* bf784b0 kata1 added
+* d8cf8e0 test file again added
+* a8df755 test file added
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git branch mybranch
+fatal: a branch named 'mybranch' already exists
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (master)
+$ git switch mybranch
+Switched to branch 'mybranch'
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ ls
+file.txt  file1.txt  file2.txt  kata2.txt  pooja.txt  test.txt
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$ git diff mybranch master
+diff --git a/pooja.txt b/pooja.txt
+deleted file mode 100644
+index e69de29..0000000
+
+raosh@DESKTOP-1IBSIUQ MINGW64 ~/ZEMOSO/training (mybranch)
+$
